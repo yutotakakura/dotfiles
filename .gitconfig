@@ -1,0 +1,15 @@
+[user]
+    name = Yuto Takakura
+    email = yutotakakura0320@gmail.com
+[core]
+    editor = nvim
+[alias]
+    s = status
+    d = diff
+    l = log
+    a = add
+    cm = commit
+    ch = checkout
+    cl = clone
+    pl = pull
+    ph = push
