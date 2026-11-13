@@ -1,3 +1,7 @@
+-- リーダーキー（lazy.nvim より前に設定する必要がある）
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.opt.number = true
 
 -- 現在行の行番号を強調表示
@@ -20,3 +24,10 @@ end
 transparent()
 -- カラースキームを変えても透明を保つ
 vim.api.nvim_create_autocmd("ColorScheme", { callback = transparent })
+
+-- ウィンドウ移動（Ctrl+h で左のツリーへ、Ctrl+l で右のエディタへ）
+vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "左のウィンドウへ" })
+vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "右のウィンドウへ" })
+
+-- プラグイン（lazy.nvim）
+require("config.lazy")
