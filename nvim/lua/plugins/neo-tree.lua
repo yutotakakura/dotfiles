@@ -33,4 +33,23 @@ return {
       },
     },
   },
+  config = function(_, opts)
+    require("neo-tree").setup(opts)
+
+    -- 起動時にツリーを開いてカーソルを移動
+    local from_stdin = false
+    vim.api.nvim_create_autocmd("StdinReadPre", {
+      callback = function() from_stdin = true end,
+    })
+    vim.api.nvim_create_autocmd("VimEnter", {
+      callback = function()
+        -- 引数なしの `nvim` のときだけ開く
+        -- （`nvim <ファイル>` では開かない。`nvim <ディレクトリ>` は neo-tree が自動で開く）
+        if from_stdin or vim.fn.argc() > 0 then
+          return
+        end
+        vim.cmd("Neotree focus")
+      end,
+    })
+  end,
 }
