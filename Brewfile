@@ -1,3 +1,5 @@
 brew "neovim"
 brew "starship"
 cask "ghostty"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
