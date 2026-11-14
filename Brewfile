@@ -1,6 +1,8 @@
+tap "laishulu/homebrew"
 brew "neovim"
 brew "starship"
 cask "ghostty"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 brew "go"
+brew "laishulu/homebrew/macism"
