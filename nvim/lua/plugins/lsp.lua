@@ -1,6 +1,8 @@
 local tools = {
   "gopls",
   "goimports",
+  "vtsls",
+  "prettier",
 }
 
 return {
