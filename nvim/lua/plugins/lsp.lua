@@ -24,8 +24,6 @@ return {
     },
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-      require("mason").setup()
-
       vim.lsp.config("gopls", {
         settings = {
           gopls = {
@@ -36,7 +34,7 @@ return {
         },
       })
 
-      require("mason-lspconfig").setup({ automatic_enable = true })
+      require("mason-lspconfig").setup()
 
       vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)

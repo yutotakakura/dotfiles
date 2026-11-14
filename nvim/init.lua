@@ -1,6 +1,5 @@
 -- リーダーキー（lazy.nvim より前に設定する必要がある）
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 vim.opt.number = true
 
