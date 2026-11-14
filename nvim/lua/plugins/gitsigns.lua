@@ -1,9 +1,8 @@
--- 行番号の左に git の差分（追加・変更・削除）を表示
 return {
   "lewis6991/gitsigns.nvim",
   event = { "BufReadPre", "BufNewFile" },
   init = function()
-    vim.opt.signcolumn = "yes" -- 印の列を常に表示して、表示が左右にずれないようにする
+    vim.opt.signcolumn = "yes" -- 印の有無で本文が左右にずれないように
   end,
   opts = {
     on_attach = function(bufnr)
