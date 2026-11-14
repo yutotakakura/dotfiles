@@ -7,8 +7,8 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ffcc00", bold = true })
 
--- 背景を透明にして Ghostty の background-opacity を効かせる
-local function transparent()
+local function highlights()
+  -- 背景を透明にして Ghostty の background-opacity を効かせる
   for _, group in ipairs({
     "Normal", "NormalNC", "NormalFloat", "FloatBorder",
     "SignColumn", "LineNr", "EndOfBuffer",
@@ -18,15 +18,11 @@ local function transparent()
     hl.ctermbg = nil
     vim.api.nvim_set_hl(0, group, hl)
   end
-end
-transparent()
-vim.api.nvim_create_autocmd("ColorScheme", { callback = transparent })
 
-local function zenkaku_space()
   vim.api.nvim_set_hl(0, "ZenkakuSpace", { bg = "#7a3e3e" })
 end
-zenkaku_space()
-vim.api.nvim_create_autocmd("ColorScheme", { callback = zenkaku_space })
+highlights()
+vim.api.nvim_create_autocmd("ColorScheme", { callback = highlights })
 vim.api.nvim_create_autocmd({ "VimEnter", "WinNew" }, {
   callback = function()
     if not vim.w.zenkaku_match then

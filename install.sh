@@ -6,7 +6,6 @@ DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [[ "${1:-}" != "--link-only" ]]; then
   # 公式以外の tap のパッケージは、明示的に信頼しないと brew bundle が失敗する
   echo "==> brew trust"
-  brew tap laishulu/homebrew
   brew trust --formula laishulu/homebrew/macism
 
   echo "==> brew bundle"
@@ -33,4 +32,4 @@ echo "==> Linking configs"
 link ghostty                 "$HOME/.config/ghostty"
 link nvim                    "$HOME/.config/nvim"
 link starship/starship.toml  "$HOME/.config/starship.toml"
-link zsh/.zshrc           "$HOME/.zshrc"
+link zsh/.zshrc              "$HOME/.zshrc"

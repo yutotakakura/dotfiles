@@ -11,7 +11,6 @@ return {
 
   {
     "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreview", "MarkdownPreviewStop", "MarkdownPreviewToggle" },
     ft = { "markdown" },
     build = "cd app && ./install.sh", -- ビルド済みバイナリを取得（Node.js 不要）
     keys = {
