@@ -1,0 +1,9 @@
+[user]
+name = Yuto Takakura
+email = 62083026+yutotakakura@users.noreply.github.com
+
+[init]
+defaultBranch = main
+
+[include]
+path = ~/.gitconfig.local
